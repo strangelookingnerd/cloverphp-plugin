@@ -5,7 +5,6 @@ import org.jenkinsci.plugins.cloverphp.results.ClassCoverage;
 import org.jenkinsci.plugins.cloverphp.results.FileCoverage;
 import org.jenkinsci.plugins.cloverphp.results.PackageCoverage;
 import org.jenkinsci.plugins.cloverphp.results.ProjectCoverage;
-import hudson.util.IOException2;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -92,7 +91,7 @@ public final class CloverCoverageParser {
             }
             return coverage;
         } catch (SAXException e) {
-            throw new IOException2("Cannot parse coverage results", e);
+            throw new IOException("Cannot parse coverage results", e);
         }
     }
 
